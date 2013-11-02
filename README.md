@@ -33,8 +33,18 @@ function x(){
 }
 ```
 
-Why?
-----
+jsq prints errors when running it, should I worry?
+--------------------------------------------------
+TLDR; No don't worry. Files are just skipped.
+
+`jsq` prints an error for one of two reasons:
+- The JavaScript code is invalid and can not be parsed correctly: The file is skipped.
+- There is a bug in `jsq` that would cause it to produce malformed JavaScript: The file is skipped.
+
+So basically, jsq is just letting you know that some files are beeing skipped.
+
+why create jsq?
+---------------
 I created this tool because we where initially using both single quoted and double quoted strings in our JavaScript code
 on project.
 
