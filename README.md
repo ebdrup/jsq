@@ -46,7 +46,7 @@ So basically, `jsq` is just letting you know that some files are beeing skipped.
 why create jsq?
 ---------------
 I created this tool because we where initially using both single quoted and double quoted strings in our JavaScript code
-on project.
+on a project.
 
 Then we decided that our coding-standard should be single-quotes JavaSctipt strings, but the codebase was a mix.
 
