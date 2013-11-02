@@ -50,6 +50,6 @@ why create jsq?
 I created this tool because we where initially using both single quoted and double quoted strings in our JavaScript code
 on a project.
 
-Then we decided that our coding-standard should be single-quotes JavaSctipt strings, but the codebase was a mix.
+Then we decided that our coding-standard should be single-quoted JavaSctipt strings, but the codebase was a mix.
 
 With `jsq` I was able to clean up the entire project in a jiff.
