@@ -1,7 +1,7 @@
 jsq
 ---
 
-Command line tool for transforming all double quote strings in JavaScript (.js) file(s) to single quoted strings
+Command line tool for transforming all double-quoted-strings in JavaScript (.js) file(s) to single-quoted-strings
 
 ```
 npm install jsq -g
@@ -47,7 +47,7 @@ So basically, `jsq` is just letting you know that some files are beeing skipped.
 
 why create jsq?
 ---------------
-I created this tool because we where initially using both single quoted and double quoted strings in our JavaScript code
+I created this tool because we where initially using both single-quoted and double-quoted strings in our JavaScript code
 on a project.
 
 Then we decided that our coding-standard should be single-quoted JavaSctipt strings, but the codebase was a mix.
