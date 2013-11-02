@@ -24,7 +24,7 @@ function x(){
 }
 ```
 
-Will contain this after jsq is run on it:
+Will contain this, after `jsq` is run on it:
 
 ```js
 var y = 'hello';
@@ -39,4 +39,5 @@ I created this tool because we where initially using both single quoted and doub
 on project.
 
 Then we decided that our coding-standard should be single-quotes JavaSctipt strings, but the codebase was a mix.
+
 With `jsq` I was able to clean up the entire project in a jiff.
