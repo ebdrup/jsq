@@ -10,8 +10,10 @@ npm install jsq -g
 usage
 -----
 ```
-jsq fileOrDirectory [fileOrDirectory [...]]
+jsq fileOrDirectory [fileOrDirectory [...]] [-v]
 ```
+
+`-v` will give you verbose output.
 
 effect
 ------
@@ -33,11 +35,11 @@ function x(){
 }
 ```
 
-jsq prints errors when running it, should I worry?
---------------------------------------------------
+jsq prints errors when running it with `-v` parameter, should I worry?
+----------------------------------------------------------------------
 TLDR; No don't worry. Files are just skipped.
 
-`jsq` prints an error for one of two reasons:
+When in verbose mode `jsq` prints an error for one of two reasons:
 - The JavaScript code is invalid and can not be parsed correctly: The file is skipped.
 - There is a bug in `jsq` that would cause it to produce malformed JavaScript: The file is skipped.
 
