@@ -18,7 +18,7 @@ if (!args.length) {
 	console.log('USAGE: jsq fileOrDirectory [fileOrDirectory [fileOrDirectory [..]]] [-v]');
 	process.exit(0);
 }
-var replaceCount = 0, skipCount = 0, fileCount = 0;
+var replaceCount = 0, skipParseErrorCount = 0, skipSingleQuoteErrorCount = 0, unknownErrorCount = 0, fileCount = 0;
 args.forEach(function (dirOrFile) {
 	var finder = findit(dirOrFile);
 	finder.on('file', function (file) {
@@ -29,8 +29,18 @@ args.forEach(function (dirOrFile) {
 			try {
 				codeWithSingleQuotes = singleQuote(code);
 			} catch (ex) {
-				skipCount++;
-				verbose && console.log('Skipping file because of error parsing file or bug in jsq: %s', file, ex);
+				if(ex.code==='singlequote'){
+					skipSingleQuoteErrorCount++;
+					verbose && console.log('Skipping file because jsq did not handle code correctly:\n%s', file, ex.inner);
+					return;
+				}
+				if(ex.code==='parse'){
+					skipParseErrorCount++;
+					verbose && console.log('Skipping file because it can not be parsed as valid JavaScript:\n%s', file, ex.inner);
+					return;
+				}
+				unknownErrorCount++;
+				verbose && console.log('Skipping file because of unknown internal error:\n%s', file, ex.inner);
 				return;
 			}
 			if (code !== codeWithSingleQuotes) {
@@ -45,7 +55,11 @@ args.forEach(function (dirOrFile) {
 	finder.on('end', function () {
 		verbose && console.log('SUMMARY');
 		console.log('%d .js files were scanned by jsq', fileCount);
-		skipCount && console.log('%s of those were skipped because of error parsing file or bug in jsq', skipCount,
+		skipParseErrorCount && console.log('%s of those were skipped because of error parsing JavaScript in file', skipParseErrorCount,
+			verbose ? '' : '(use -v param to see details)');
+		skipSingleQuoteErrorCount && console.log('%s of those were skipped because jsq could not handle them correctly (we accept pull requests)', skipSingleQuoteErrorCount,
+			verbose ? '' : '(use -v param to see details)');
+		unknownErrorCount && console.log('%s of those were skipped because unknown internal errors in jsq', unknownErrorCount,
 			verbose ? '' : '(use -v param to see details)');
 		console.log('%s of those had double quoted JavaScript strings replaced', replaceCount || 'None');
 	});
