@@ -41,7 +41,7 @@ TLDR; No don't worry. Files are just skipped.
 - The JavaScript code is invalid and can not be parsed correctly: The file is skipped.
 - There is a bug in `jsq` that would cause it to produce malformed JavaScript: The file is skipped.
 
-So basically, jsq is just letting you know that some files are beeing skipped.
+So basically, `jsq` is just letting you know that some files are beeing skipped.
 
 why create jsq?
 ---------------
