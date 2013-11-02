@@ -1,0 +1,30 @@
+{
+	"name": "jsq",
+	"version": "0.0.1",
+	"description": "Command line tool for repacing all double quoted strings with single quoted strings in a file or directory. Usage: jsq fileOrDirectory [fileOrDirectory [fileOrdirectory]]",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"Command",
+		"line",
+		"single",
+		"quoted",
+		"string",
+		"double",
+		"quoted",
+		"string",
+		"javascript",
+		"code"
+	],
+	"bin": {
+		"jsq": "./index.js"
+	},
+	"author": "Allan Ebdrup",
+	"license": "Apache v2",
+	"dependencies": {
+		"singlequote": "~0.0.5",
+		"findit": "~1.1"
+	}
+}
