@@ -24,7 +24,15 @@
   "author": "Allan Ebdrup",
   "license": "Apache v2",
   "dependencies": {
-    "singlequote": "~0.0.7",
+    "singlequote": "~0.0.8",
     "findit": "~1.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Muscula/jsq.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Muscula/jsq/issues"
   }
 }
