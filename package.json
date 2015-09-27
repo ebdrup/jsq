@@ -24,8 +24,8 @@
   "author": "Allan Ebdrup",
   "license": "Apache v2",
   "dependencies": {
-    "singlequote": "~0.0.8",
-    "findit": "~1.1"
+    "singlequote": "0.0.12",
+    "findit": "1.1.1"
   },
   "devDependencies": {},
   "repository": {
