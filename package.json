@@ -22,10 +22,10 @@
     "jsq": "./index.js"
   },
   "author": "Allan Ebdrup",
-  "license": "Apache v2",
+  "license": "MIT",
   "dependencies": {
-    "singlequote": "~0.0.8",
-    "findit": "~1.1"
+    "singlequote": "^1.0",
+    "findit": "^2.0"
   },
   "devDependencies": {},
   "repository": {
@@ -34,5 +34,6 @@
   },
   "bugs": {
     "url": "https://github.com/Muscula/jsq/issues"
-  }
+  },
+  "homepage": "https://github.com/Muscula/jsq#readme"
 }
